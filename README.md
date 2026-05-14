@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ই-শপ বিডি (E-Shop BD)
 
-## Getting Started
+একটি আধুনিক ই-কমার্স প্ল্যাটফর্ম যা Next.js, Prisma এবং NeonDB দিয়ে তৈরি।
 
-First, run the development server:
+## টেক স্ট্যাক
+- **Frontend**: Next.js 14 (App Router)
+- **Styling**: Vanilla CSS & Tailwind (Custom UI)
+- **Animation**: Framer Motion
+- **Database**: NeonDB (PostgreSQL)
+- **ORM**: Prisma
+- **Auth**: NextAuth.js
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## শুরু করার আগে
+প্রথমে আপনার প্রোজেক্টে একটি `.env` ফাইল তৈরি করুন এবং নিচের ভেরিয়েবলগুলো সেট করুন:
+
+```env
+DATABASE_URL="your_neondb_url_here"
+NEXTAUTH_SECRET="your_random_secret_here"
+NEXTAUTH_URL="http://localhost:3000"
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ইন্সটলেশন এবং রান
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+১. ডিপেন্ডেন্সি ইন্সটল করুন:
+```bash
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+২. ডাটাবেস সিঙ্ক করুন:
+```bash
+npx prisma db push
+```
 
-## Learn More
+৩. ডামি ডাটা ইনসার্ট করুন (অপশনাল):
+```bash
+npx prisma db seed
+```
 
-To learn more about Next.js, take a look at the following resources:
+৪. ডেভেলপমেন্ট সার্ভার রান করুন:
+```bash
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## ফিচারসমূহ
+- **আধুনিক ডিজাইন**: গ্লাস-মরফিজম এবং ডাইনামিক অ্যানিমেশন।
+- **বাংলা সাপোর্ট**: সম্পূর্ণ সাইটটি বাংলায় ডিজাইন করা।
+- **অ্যাডমিন ড্যাশবোর্ড**: ইউজার, প্রোডাক্ট এবং অর্ডার ম্যানেজমেন্টের জন্য শক্তিশালী প্যানেল।
+- **শপিং কার্ট**: অটো-ক্যালকুলেশন ফিচারসহ কার্ট ম্যানেজমেন্ট।
+- **অথেন্টিকেশন**: ইমেইল এবং পাসওয়ার্ড দিয়ে লগইন ও সাইনআপ।
